@@ -7,7 +7,11 @@ require('dotenv').config()
 
 const app = express()
 
-app.use(fileUpload())
+app.use(fileUpload({
+    limits: {
+        fileSize: process.env.SIZE_LIMIT * 1024 * 1024
+    }
+}))
 
 app.post('/api/upload', (req, res) => {
     if (req.header("secret") !== process.env.SECRET) {
@@ -17,7 +21,7 @@ app.post('/api/upload', (req, res) => {
     if (!req.files) {
         return res.status(400).send('No data received')
     }
-        
+
     const postFile = req.files.img
     let fileExtension = path.extname(postFile.name)
 

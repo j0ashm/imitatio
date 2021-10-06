@@ -14,6 +14,7 @@ Example:
 	SECRET=Q2dm9Zfxd34meG9X
 	FILE_NAME_SIZE=5
     DOMAIN=img.yourdomain.com
+    SIZE_LIMIT=5 (this is in megabytes)
 	```
 4. Run the server!  
 `node .`
