@@ -17,7 +17,7 @@ app.post('/api/upload', (req, res) => {
     if (!req.files) {
         return res.status(400).send('No data received')
     }
-    
+        
     const postFile = req.files.img
     let fileExtension = path.extname(postFile.name)
 
