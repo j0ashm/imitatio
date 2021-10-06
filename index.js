@@ -17,8 +17,6 @@ app.post('/api/upload', (req, res) => {
     if (!req.files) {
         return res.status(400).send('No data received')
     }
-
-    let host = req.headers.host
     
     const postFile = req.files.img
     let fileExtension = path.extname(postFile.name)
@@ -35,7 +33,7 @@ app.post('/api/upload', (req, res) => {
             return res.status(500).send(err)
         }
 
-        res.send(`${host}/uploads/${uploadName}`);
+        res.send(`${process.env.DOMAIN}/uploads/${uploadName}`);
     })
 })
 
