@@ -104,3 +104,7 @@ dist
 .tern-port
 
 uploads/*.jpg
+uploads/*.png
+uploads/*.webp
+uploads/*.tiff
+uploads/*.gif
