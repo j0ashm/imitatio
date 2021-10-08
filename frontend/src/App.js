@@ -1,14 +1,15 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { Container } from "@chakra-ui/layout";
-import theme from "./theme";
 
 import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider>
       <Container maxW="container.lg">
         <Header />
+        <Hero />
       </Container>
     </ChakraProvider>
   );
